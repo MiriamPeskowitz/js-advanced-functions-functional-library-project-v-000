@@ -5,6 +5,12 @@ const fi = (function() {
     },
 
     each: function(collection, element) {
+        const newCol = (collection instanceof Array) ? collection.slice() : Object.values(collection)
+
+      for (let index = 0; index < newCol.length; index++)
+        element(newCol[index])
+
+      return collection
       
 
     },
